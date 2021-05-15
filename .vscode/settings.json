@@ -45,5 +45,6 @@
         "typeinfo": "cpp",
         "ctime": "cpp"
     },
-    "editor.autoClosingQuotes" : "always"
+    "editor.autoClosingQuotes": "always",
+    "editor.formatOnSave": true
 }
