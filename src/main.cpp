@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-const int  n = 5;
+const int  n = 12;
 int countPop = n * n;
 
 void fillingArray(bool (&arr)[n][n]){
@@ -14,14 +14,11 @@ void fillingArray(bool (&arr)[n][n]){
 void printArr(bool (&arr)[n][n]){
   for(int i = 0; i < n; i++){
     for(int j = 0; j < n; j++){
-      // if(arr[i][j] == true){
-      //   arr[i][j] = 'o';
-      //   std::cout << std::boolalpha << arr[i][j] << " ";        
-      // }else{
-      //   arr[i][j] = 'x';
-      //   std::cout << std::boolalpha << arr[i][j] << " ";   
-      // }
-      std::cout << std::boolalpha << arr[i][j] << " ";
+      if(arr[i][j] == true){
+        std::cout << 'O' << " ";
+      }else{
+        std::cout << 'X' << " ";
+      }
     }
     std::cout << std::endl;
   }
@@ -63,7 +60,7 @@ int main(){
   fillingArray(arrPup);
   printArr(arrPup);
 
-  while (countPop != 0)
+  while (countPop > 0)
   {
     std::cout << "Enter the coordinates start" << std::endl;
     std::cin >> begin_x >> begin_y;
@@ -71,7 +68,7 @@ int main(){
     std::cin >> end_x >> end_y;
 
     if(checkPop(begin_x, begin_y, end_x, end_y, arrPup)){
-      // countPop--; 
+      countPop--; 
       printArr(arrPup);
     }
   }
@@ -80,3 +77,7 @@ int main(){
   
   return 0;
 }
+
+// Можно просто сделать функцию вывода, которая будет 
+// проходить по массиву bool. При обходе она будет проверять: 
+// если true, выводить O, а иначе выводить X (или наоборот)
